@@ -15,4 +15,4 @@ set(LibrariesRoot ${CMAKE_CURRENT_LIST_DIR})
 #
 ###########################################################
 
-#add_subdirectory("DiceRollerLib")
+add_subdirectory("DiceRoller")
