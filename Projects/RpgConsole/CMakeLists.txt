@@ -49,6 +49,7 @@ project(
 # Include libraries directories source codes:
 #include_directories("${ReposRoot}/Projects/libs/<lib>")
 #include_directories("${VersionLibReposRoot}/VersionLib")
+include_directories("${ProjectsRoot}/libs/DiceRoller")
 
 # Define the executable properties:
 add_executable(
@@ -72,4 +73,5 @@ if(UseManualTargetLinkLibs)
 	endif()
 else()
 	#target_link_libraries(RpgConsole VersionLib)
+	target_link_libraries(RpgConsole DiceRoller)
 endif()
