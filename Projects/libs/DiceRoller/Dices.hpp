@@ -35,9 +35,16 @@
 #include "Roller.hpp"
 #include "DiceBase.hpp"
 
+/**
+ * @brief Class for dice d4
+ */
 class DICE_ROLLER_LIB_API d4 : public Dice
 {
 	public:
+
+		//
+		// Constructors:
+		//
 
 		d4 (RollerType type = RollerType::UNIFORM);
 
@@ -45,14 +52,35 @@ class DICE_ROLLER_LIB_API d4 : public Dice
 
 		d4 (d4&& other) noexcept;
 
+		//
+		// Destructor:
+		//
+
 		~d4();
 
+		//
+		// Methods:
+		//
+
+		/**
+		 * @brief Get the dice value
+		 */
 		int getValue();
 
+		/**
+		 * @brief Get the DiceType enumerator value
+		 */
 		DiceType getDice();
 
+		/**
+		 * @brief Get the RollerType used to configure the dice value distribution
+		 */
 		RollerType getType();
 
+		/**
+		 * @brief Make a dice roll.
+		 * @note This method is already called when a dice is created. Call this method to reuse (reroll) the dice again.
+		 */
 		void mkRoll();
 
 		bool operator== (const d4& other);
@@ -64,9 +92,16 @@ class DICE_ROLLER_LIB_API d4 : public Dice
 		d4& operator= (d4&& other) noexcept;
 };
 
+/**
+ * @brief Class for dice d6
+ */
 class DICE_ROLLER_LIB_API d6 : public Dice
 {
 	public:
+
+		//
+		// Constructors:
+		//
 
 		d6 (RollerType type = RollerType::UNIFORM);
 
@@ -74,14 +109,35 @@ class DICE_ROLLER_LIB_API d6 : public Dice
 
 		d6 (d6&& other) noexcept;
 
+		//
+		// Destructor:
+		//
+
 		~d6();
 
+		//
+		// Methods:
+		//
+
+		/**
+		 * @brief Get the dice value
+		 */
 		int getValue();
 
+		/**
+		 * @brief Get the DiceType enumerator value
+		 */
 		DiceType getDice();
 
+		/**
+		 * @brief Get the RollerType used to configure the dice value distribution
+		 */
 		RollerType getType();
 
+		/**
+		 * @brief Make a dice roll.
+		 * @note This method is already called when a dice is created. Call this method to reuse (reroll) the dice again.
+		 */
 		void mkRoll();
 
 		bool operator== (const d6& other);
@@ -93,9 +149,16 @@ class DICE_ROLLER_LIB_API d6 : public Dice
 		d6& operator= (d6&& other) noexcept;
 };
 
+/**
+ * @brief Class for dice d8
+ */
 class DICE_ROLLER_LIB_API d8 : public Dice
 {
 	public:
+
+		//
+		// Constructors:
+		//
 
 		d8 (RollerType type = RollerType::UNIFORM);
 
@@ -103,14 +166,35 @@ class DICE_ROLLER_LIB_API d8 : public Dice
 
 		d8 (d8&& other) noexcept;
 
+		//
+		// Destructor:
+		//
+
 		~d8();
 
+		//
+		// Methods:
+		//
+
+		/**
+		 * @brief Get the dice value
+		 */
 		int getValue();
 
+		/**
+		 * @brief Get the DiceType enumerator value
+		 */
 		DiceType getDice();
 
+		/**
+		 * @brief Get the RollerType used to configure the dice value distribution
+		 */
 		RollerType getType();
 
+		/**
+		 * @brief Make a dice roll.
+		 * @note This method is already called when a dice is created. Call this method to reuse (reroll) the dice again.
+		 */
 		void mkRoll();
 
 		bool operator== (const d8& other);
@@ -122,9 +206,16 @@ class DICE_ROLLER_LIB_API d8 : public Dice
 		d8& operator= (d8&& other) noexcept;
 };
 
+/**
+ * @brief Class for dice d10
+ */
 class DICE_ROLLER_LIB_API d10 : public Dice
 {
 	public:
+
+		//
+		// Constructors:
+		//
 
 		d10 (RollerType type = RollerType::UNIFORM);
 
@@ -132,14 +223,35 @@ class DICE_ROLLER_LIB_API d10 : public Dice
 
 		d10 (d10&& other) noexcept;
 
+		//
+		// Destructors:
+		//
+
 		~d10();
 
+		//
+		// Methods:
+		//
+
+		/**
+		 * @brief Get the dice value
+		 */
 		int getValue();
 
+		/**
+		 * @brief Get the DiceType enumerator value
+		 */
 		DiceType getDice();
 
+		/**
+		 * @brief Get the RollerType used to configure the dice value distribution
+		 */
 		RollerType getType();
 
+		/**
+		 * @brief Make a dice roll.
+		 * @note This method is already called when a dice is created. Call this method to reuse (reroll) the dice again.
+		 */
 		void mkRoll();
 
 		bool operator== (const d10& other);
@@ -151,9 +263,16 @@ class DICE_ROLLER_LIB_API d10 : public Dice
 		d10& operator= (d10&& other) noexcept;
 };
 
+/**
+ * @brief Class for dice d12
+ */
 class DICE_ROLLER_LIB_API d12 : public Dice
 {
 	public:
+
+		//
+		// Constructors:
+		//
 
 		d12 (RollerType type = RollerType::UNIFORM);
 
@@ -161,14 +280,35 @@ class DICE_ROLLER_LIB_API d12 : public Dice
 
 		d12 (d12&& other) noexcept;
 
+		//
+		// Destructor:
+		//
+
 		~d12();
 
+		//
+		// Methods:
+		//
+
+		/**
+		 * @brief Get the dice value
+		 */
 		int getValue();
 
+		/**
+		 * @brief Get the DiceType enumerator value
+		 */
 		DiceType getDice();
 
+		/**
+		 * @brief Get the RollerType used to configure the dice value distribution
+		 */
 		RollerType getType();
 
+		/**
+		 * @brief Make a dice roll.
+		 * @note This method is already called when a dice is created. Call this method to reuse (reroll) the dice again.
+		 */
 		void mkRoll();
 
 		bool operator== (const d12& other);
@@ -180,9 +320,16 @@ class DICE_ROLLER_LIB_API d12 : public Dice
 		d12& operator= (d12&& other) noexcept;
 };
 
+/**
+ * @brief Class for dice d20
+ */
 class DICE_ROLLER_LIB_API d20 : public Dice
 {
 	public:
+
+		//
+		// Constructors:
+		//
 
 		d20 (RollerType type = RollerType::UNIFORM);
 
@@ -190,14 +337,35 @@ class DICE_ROLLER_LIB_API d20 : public Dice
 
 		d20 (d20&& other) noexcept;
 
+		//
+		// Destructor:
+		//
+
 		~d20();
 
+		//
+		// Methods:
+		//
+
+		/**
+		 * @brief Get the dice value
+		 */
 		int getValue();
 
+		/**
+		 * @brief Get the DiceType enumerator value
+		 */
 		DiceType getDice();
 
+		/**
+		 * @brief Get the RollerType used to configure the dice value distribution
+		 */
 		RollerType getType();
 
+		/**
+		 * @brief Make a dice roll.
+		 * @note This method is already called when a dice is created. Call this method to reuse (reroll) the dice again.
+		 */
 		void mkRoll();
 
 		bool operator== (const d20& other);
@@ -209,9 +377,16 @@ class DICE_ROLLER_LIB_API d20 : public Dice
 		d20& operator= (d20&& other) noexcept;
 };
 
+/**
+ * @brief Class for dice d100
+ */
 class DICE_ROLLER_LIB_API d100 : public Dice
 {
 	public:
+
+		//
+		// Constructors:
+		//
 
 		d100 (RollerType type = RollerType::UNIFORM);
 
@@ -219,14 +394,35 @@ class DICE_ROLLER_LIB_API d100 : public Dice
 
 		d100 (d100&& other) noexcept;
 
+		//
+		// Destructor:
+		//
+
 		~d100();
 
+		//
+		// Methods:
+		//
+
+		/**
+		 * @brief Get the dice value
+		 */
 		int getValue();
 
+		/**
+		 * @brief Get the DiceType enumerator value
+		 */
 		DiceType getDice();
 
+		/**
+		 * @brief Get the RollerType used to configure the dice value distribution
+		 */
 		RollerType getType();
 
+		/**
+		 * @brief Make a dice roll.
+		 * @note This method is already called when a dice is created. Call this method to reuse (reroll) the dice again.
+		 */
 		void mkRoll();
 
 		bool operator== (const d100& other);

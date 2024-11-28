@@ -33,6 +33,11 @@
 #include "Types.hpp"
 #include "DiceType.hpp"
 
+/**
+ * @brief Make a dice roll using a Uniform Distribution, making the probability to each value be equal.
+ * @param type Type of dice
+ * @return Return the random value between the minimum and maximum values based on the dice type
+ */
 int RollDice_UniformRoll (DiceType type);
 
 #endif // !ROLLER_HPP

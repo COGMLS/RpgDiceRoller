@@ -34,6 +34,9 @@
 #include "DiceType.hpp"
 #include "Roller.hpp"
 
+/**
+ * @brief Class base for dice classes
+ */
 class DICE_ROLLER_LIB_API Dice
 {
 	protected:
@@ -60,12 +63,25 @@ class DICE_ROLLER_LIB_API Dice
 		// Methods:
 		//
 
+		/**
+		 * @brief Get the dice value
+		 */
 		virtual int getValue();
 
+		/**
+		 * @brief Get the DiceType enumerator value
+		 */
 		virtual DiceType getDice();
 
+		/**
+		 * @brief Get the RollerType used to configure the dice value distribution
+		 */
 		virtual RollerType getType();
 
+		/**
+		 * @brief Make a dice roll.
+		 * @note This method is already called when a dice is created. Call this method to reuse (reroll) the dice again.
+		 */
 		virtual void mkRoll();
 
 		virtual bool operator== (const Dice& other);
