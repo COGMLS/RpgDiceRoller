@@ -6,6 +6,10 @@ The RPG Dice Roller is a tool for RPG board games, allowing the players to use f
 
 > In the actual moment, the `Rpg Console` it's been used to test the library.
 
+> **IMPORTANT:** This project is under development and the features listed here may not be fully implemented.
+
+> **NOTE FROM DEVELOPER:** This project it's been developed using my free time. The implementation of the new features and bug correction may take some time.
+
 ### Features:
 
 Dices available: The `Dice Roller` library contains the dices `d4`, `d6`, `d8`, `d10`, `d20` and `d100`. An special d100, called `d100Comb` is design to make easier the roll of a d10 and d100 in only one dice object.
