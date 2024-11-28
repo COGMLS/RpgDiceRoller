@@ -36,6 +36,9 @@
 #include "DiceBase.hpp"
 #include "Dices.hpp"
 
+/**
+ * @brief Class for combined dices d100 and d10
+ */
 class DICE_ROLLER_LIB_API d100Comb : public Dice
 {
 	private:
@@ -45,20 +48,58 @@ class DICE_ROLLER_LIB_API d100Comb : public Dice
 
 	public:
 
+		//
+		// Constructors:
+		//
+
+		/**
+		 * @brief Create an D100 combined dice roll (D100 and D10)
+		 * @param type Dice value distribution
+		 */
 		d100Comb (RollerType type = RollerType::UNIFORM);
+
+		/**
+		 * @brief Create an D100 combined roll based on D100 and D10 already created
+		 * @param D10 Dice d10
+		 * @param D100 Dice d100
+		 * @param type Dice value distribution
+		 * @note If a dice is not maching with the roller type, the dice will be rerolled with the roller type value for this object creation
+		 */
+		d100Comb (const d10& D10, const d100& D100, RollerType type = RollerType::UNIFORM);
 
 		d100Comb (const d100Comb& other);
 
 		d100Comb (d100Comb&& other) noexcept;
 
+		//
+		// Destructor:
+		//
+
 		~d100Comb();
 
+		//
+		// Methods:
+		//
+
+		/**
+		 * @brief Get the dice value
+		 */
 		int getValue();
 
+		/**
+		 * @brief Get the DiceType enumerator value
+		 */
 		DiceType getDice();
 
+		/**
+		 * @brief Get the RollerType used to configure the dice value distribution
+		 */
 		RollerType getType();
 
+		/**
+		 * @brief Make a dice roll.
+		 * @note This method is already called when a dice is created. Call this method to reuse (reroll) the dice again.
+		 */
 		void mkRoll();
 
 		bool operator== (const d100Comb& other);

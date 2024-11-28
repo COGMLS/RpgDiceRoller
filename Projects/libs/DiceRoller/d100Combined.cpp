@@ -11,6 +11,24 @@ d100Comb::d100Comb (RollerType type)
     this->mkRoll();
 }
 
+d100Comb::d100Comb(const d10 &D10, const d100 &D100, RollerType type)
+{
+    this->dice = DiceType::D100;
+    this->type = type;
+    this->dice_10 = D10;
+    this->dice_100 = D100;
+
+    if (this->dice_10.getType() != this->type)
+    {
+        this->dice_10 = d10(this->type);
+    }
+
+    if (this->dice_100.getType() != this->type)
+    {
+        this->dice_100 = d100(this->type);
+    }
+}
+
 d100Comb::d100Comb (const d100Comb &other)
 {
     this->dice = other.dice;
