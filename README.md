@@ -27,7 +27,7 @@ Dices available: The `Dice Roller` library contains the dices `d4`, `d6`, `d8`, 
 | Dice 100 | Class | `d100` | ✅ | |
 | Combined D10 and D100 | Class | `d100Comb` | ✅ | |
 | Uniform Dice Roll | Function | `RollDice_UniformRoll` | ✅ | This method is called internally by the dices constructors |
-| Dice Value Tools | Functions | `DiceMaxVal`, `DiceMaxVal` and `DiceType2Str` | ✅ | Methods to give the correct values (minimum and maximum) based on dice to provide the correct value distribution. `DiceType2Str` is a method design to convert the dice identification to a `std::string` type. |
+| Dice Value Tools | Function | `DiceMaxVal`, `DiceMaxVal` and `DiceType2Str` | ✅ | Methods to give the correct values (minimum and maximum) based on dice to provide the correct value distribution. `DiceType2Str` is a method design to convert the dice identification to a `std::string` type. |
 | Dice Roll Type | Enumerator | `RollerType` | ✅📌 | This enumerator is destined to define the type of distribution of the dice value, **by default the UNIFORM distribution is used all the time**. Other values are not recommended to use. |
 
 > 📌 The `RollerType` values are not fully implemented. The non-UNIFORM roll type was created to simulate vicious dices and should not be used.
@@ -36,7 +36,7 @@ Dices available: The `Dice Roller` library contains the dices `d4`, `d6`, `d8`, 
 
 MIT License
 
-Copyright (c) 2024 Matheus L. Silvati
+Copyright (c) 2024-2025 Matheus L. Silvati
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
