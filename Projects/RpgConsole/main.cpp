@@ -65,7 +65,7 @@ int main (int argc, const char* argv[])
 	}
 
 	#ifdef DICE_ROLLER_ENABLE_EXPERIMENTAL_DICE_MATH
-	std::cout << "DiceMathCmd: " << DiceMathCmd().getValue() << " | DiceMathType: " << DiceMathCmd().getType() << std::endl;
+	std::cout << "DiceMathBase: " << DiceMathBase().getValue() << " | DiceMathType: " << DiceMathBase().getType() << std::endl;
 	std::cout << "DiceMathAttr: " << DiceMathAttr(10).getValue() << " | DiceMathType: " << DiceMathAttr(10).getType() << std::endl;
 	std::cout << "DiceMathDiceObj: " << DiceMathDiceObj(d20()).getValue() << " | DiceMathType: " << DiceMathDiceObj(d20()).getType() << std::endl;
 	std::cout << "DiceMathOp: " << DiceMathOp('+', DiceMathAttr(15)).getValue() << " | DiceMathType: " << DiceMathOp('+', 15).getType() << std::endl;
