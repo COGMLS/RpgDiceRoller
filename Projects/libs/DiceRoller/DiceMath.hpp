@@ -49,9 +49,9 @@
 #endif // !DICE_ROLLER_ENABLE_EXPERIMENTAL_DICE_MATH_STORE
 
 /**
- * @brief Dice Mathematical Command base class to provide a inherence to DiceMathAttr, DiceMathDiceObj and DiceMathOp
+ * @brief Dice Mathematical Command base class to provide a inherence to DiceMathAttr, DiceMathDiceObj, DiceMathOp and DiceMathGroup
  */
-class DiceMathCmd
+class DiceMathBase
 {
 	protected:
 
@@ -60,15 +60,15 @@ class DiceMathCmd
 
 	public:
 
-		DiceMathCmd();
+		DiceMathBase();
 
-		DiceMathCmd (const DiceMathCmd& other);
-		DiceMathCmd (DiceMathCmd&& other) noexcept;
+		DiceMathBase (const DiceMathBase& other);
+		DiceMathBase (DiceMathBase&& other) noexcept;
 		
-		~DiceMathCmd();
+		~DiceMathBase();
 
-		DiceMathCmd& operator= (const DiceMathCmd& other);
-		DiceMathCmd& operator= (DiceMathCmd&& other) noexcept;
+		DiceMathBase& operator= (const DiceMathBase& other);
+		DiceMathBase& operator= (DiceMathBase&& other) noexcept;
 
 		virtual int getValue();
 		virtual DiceMathType getType();
@@ -77,7 +77,7 @@ class DiceMathCmd
 /**
  * @brief Dice Mathematical component for Dice objects
  */
-class DiceMathDiceObj : public DiceMathCmd
+class DiceMathDiceObj : public DiceMathBase
 {
 	public:
 	
@@ -104,7 +104,7 @@ class DiceMathDiceObj : public DiceMathCmd
 /**
  * @brief Dice Mathematical Attributes or Bonus holding integers
  */
-class DiceMathAttr : public DiceMathCmd
+class DiceMathAttr : public DiceMathBase
 {
 	public:
 	
@@ -127,13 +127,13 @@ class DiceMathAttr : public DiceMathCmd
 /**
  * @brief Dice Mathematical Operator to create the relations between DiceMathAttr or DiceMathDiceObj. The relation is with last operator's value stored applied the mathematical operation between the current operator data stored.
  */
-class DiceMathOp : public DiceMathCmd
+class DiceMathOp : public DiceMathBase
 {
 	private:
 
 		char op;
 		bool hasCmd;
-		DiceMathCmd rCmd;
+		DiceMathBase rCmd;
 	
 	public:
 
@@ -196,7 +196,7 @@ class DiceMath
 };
 
 /**
- * @brief Calculate the dice cmd, using the last operator value with the correct mathematical relation with current operator's value and return a DiceMathAttr to replace the current operator's value with new attribute. If the last operator is nullptr or current operator does not hold a DiceMathCmd, the function will return the current operator's value.
+ * @brief Calculate the dice cmd, using the last operator value with the correct mathematical relation with current operator's value and return a DiceMathAttr to replace the current operator's value with new attribute. If the last operator is nullptr or current operator does not hold a DiceMathBase, the function will return the current operator's value.
  * @param lastOp Last operator pointer
  * @param op Current operator pointer
  * @return Calculated value between lastOp and op values as a DiceMathAttr.

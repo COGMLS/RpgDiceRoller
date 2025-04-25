@@ -3,39 +3,39 @@
 #ifdef DICE_ROLLER_ENABLE_EXPERIMENTAL_DICE_MATH
 
 //
-// DiceMathCmd:
+// DiceMathBase:
 //
 
-DiceMathCmd::DiceMathCmd()
+DiceMathBase::DiceMathBase()
 {
 	this->type = DiceMathType::NOT_DEFINED;
 }
 
-DiceMathCmd::DiceMathCmd(const DiceMathCmd &other)
+DiceMathBase::DiceMathBase(const DiceMathBase &other)
 {
 	this->type = other.type;
 	this->data = other.data;
 }
 
-DiceMathCmd::DiceMathCmd(DiceMathCmd &&other) noexcept
+DiceMathBase::DiceMathBase(DiceMathBase &&other) noexcept
 {
 	this->type = std::move(other.type);
 	this->data = std::move(other.data);
 }
 
-DiceMathCmd::~DiceMathCmd()
+DiceMathBase::~DiceMathBase()
 {
 	
 }
 
-DiceMathCmd &DiceMathCmd::operator=(const DiceMathCmd &other)
+DiceMathBase &DiceMathBase::operator=(const DiceMathBase &other)
 {
 	this->type = other.type;
 	this->data = other.data;
 	return *this;
 }
 
-DiceMathCmd &DiceMathCmd::operator=(DiceMathCmd &&other) noexcept
+DiceMathBase &DiceMathBase::operator=(DiceMathBase &&other) noexcept
 {
 	if (this == &other)
 	{
@@ -47,12 +47,12 @@ DiceMathCmd &DiceMathCmd::operator=(DiceMathCmd &&other) noexcept
 	return *this;
 }
 
-int DiceMathCmd::getValue()
+int DiceMathBase::getValue()
 {
 	return 0;
 }
 
-DiceMathType DiceMathCmd::getType()
+DiceMathType DiceMathBase::getType()
 {
 	return DiceMathType::NOT_DEFINED;
 }
