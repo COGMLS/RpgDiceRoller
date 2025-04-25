@@ -68,13 +68,20 @@ if (WIN32)
 	add_library(
 					DiceRoller
 					SHARED
-					"dllmain.hpp" "dllmain.cpp"
-					"d100Combined.hpp" "d100Combined.cpp"
-					"DiceBase.hpp" "DiceBase.cpp"
+					# Windows specific headers:
+					"dllmain.hpp"					"dllmain.cpp"
+					# Dice Roller Main Library:
 					"DiceRoller.hpp"
-					"Dices.hpp" "Dices.cpp"
-					"DiceType.hpp" "DiceType.cpp"
-					"Roller.hpp" "Roller.cpp"
+					# Dice Roller Headers:
+					"d100Combined.hpp"				"d100Combined.cpp"
+					"DiceBase.hpp"					"DiceBase.cpp"
+					"DiceMath.hpp"					"DiceMath.cpp"
+					"DiceMathStore.hpp"				"DiceMathStore.cpp"
+					"Dices.hpp"						"Dices.cpp"
+					"DiceType.hpp"					"DiceType.cpp"
+					"ExperimentalFeature.hpp"
+					"RollCmd.hpp"					"RollCmd.cpp"
+					"Roller.hpp"					"Roller.cpp"
 					"Types.hpp"
 				)
 else()
@@ -83,6 +90,8 @@ else()
 					SHARED
 					"d100Combined.hpp" "d100Combined.cpp"
 					"DiceBase.hpp" "DiceBase.cpp"
+					"DiceMath.hpp" "DiceMath.cpp"
+					"DiceMathStore.hpp" "DiceMathStore.cpp"
 					"DiceRoller.hpp"
 					"Dices.hpp" "Dices.cpp"
 					"DiceType.hpp" "DiceType.cpp"
