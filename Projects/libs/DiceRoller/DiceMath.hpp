@@ -72,6 +72,7 @@ class DiceMathBase
 
 		virtual int getValue();
 		virtual DiceMathType getType();
+		virtual size_t getSize();
 };
 
 /**

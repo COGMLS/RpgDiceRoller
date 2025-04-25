@@ -57,6 +57,11 @@ DiceMathType DiceMathBase::getType()
 	return DiceMathType::NOT_DEFINED;
 }
 
+size_t DiceMathBase::getSize()
+{
+    return 0;
+}
+
 //
 // DiceMathDiceObj:
 //
