@@ -55,4 +55,18 @@ enum RollerType
 	NORMAL
 };
 
+#ifdef DICE_ROLLER_ENABLE_EXPERIMENTAL_DICE_MATH
+/**
+ * @brief Dice math type
+ */
+enum DiceMathType
+{
+	FAIL_TO_DETERMINATE = -1,
+	NOT_DEFINED,
+	DICE_MATH,
+	NUMBER_TYPE,
+	MATH_OPERATOR
+};
+#endif // !DICE_ROLLER_ENABLE_EXPERIMENTAL_DICE_MATH
+
 #endif // !TYPES_HPP
