@@ -64,5 +64,16 @@ int main (int argc, const char* argv[])
 		std::cout << "i: " << i << " Dice: " << DiceType2Str(dices[i].getDice()) << " Value: " << dices[i].getValue() << std::endl;
 	}
 
+	#ifdef DICE_ROLLER_ENABLE_EXPERIMENTAL_DICE_MATH
+	std::cout << "DiceMathCmd: " << DiceMathCmd().getValue() << " | DiceMathType: " << DiceMathCmd().getType() << std::endl;
+	std::cout << "DiceMathAttr: " << DiceMathAttr(10).getValue() << " | DiceMathType: " << DiceMathAttr(10).getType() << std::endl;
+	std::cout << "DiceMathDiceObj: " << DiceMathDiceObj(d20()).getValue() << " | DiceMathType: " << DiceMathDiceObj(d20()).getType() << std::endl;
+	std::cout << "DiceMathOp: " << DiceMathOp('+', DiceMathAttr(15)).getValue() << " | DiceMathType: " << DiceMathOp('+', 15).getType() << std::endl;
+	
+	DiceMath math;
+	int val = math.calc();
+	std::cout << "DiceMath calc: " << val << std::endl;
+	#endif // !DICE_ROLLER_ENABLE_EXPERIMENTAL_DICE_MATH
+
 	return 0;
 }
