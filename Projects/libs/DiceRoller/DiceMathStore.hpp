@@ -47,20 +47,37 @@ class DiceMathStore
 {
 	private:
 
-		DiceMathType type;
-		std::unique_ptr<int> attr;
-		std::unique_ptr<std::vector<Dice>> dices;
+		DiceMathType type;							// Define the data type is holding
+		std::unique_ptr<int> attr;					// Numeric attribute
+		std::unique_ptr<std::vector<Dice>> dices;	// Dice or dices, all of the same time
 		
 	public:
 		
 		DiceMathStore();
 		
+		/**
+		 * @brief Create a DiceMathStore that holds a numeric attribute
+		 * @param attr Numeric attribute
+		 */
 		DiceMathStore (int attr);
 		
+		/**
+		 * @brief Create a DiceMathStore object that hold a dice object
+		 * @param dice Dice object
+		 */
 		DiceMathStore (Dice dice);
 		
+		/**
+		 * @brief Create a DiceMathStore object that holds various dices
+		 * @param dices Dice vector
+		 */
 		DiceMathStore (std::vector<Dice> dices);
 		
+		/**
+		 * @brief Create a DiceMathStore object that holds various dices of the same type
+		 * @param dice Dice type
+		 * @param nDices Number of dices that will be rolled
+		 */
 		DiceMathStore (DiceType dice, unsigned int nDices);
 		
 		DiceMathStore (const DiceMathStore& other);
@@ -72,12 +89,26 @@ class DiceMathStore
 		DiceMathStore& operator= (const DiceMathStore& other);
 		DiceMathStore& operator= (DiceMathStore&& other) noexcept;
 		
+		/**
+		 * @brief Clear the DiceMathStore
+		 */
 		void clear();
 		
+		/**
+		 * @brief Get the numeric attribute.
+		 * @return If a numeric value exist, will return. Otherwise, it will return nullptr.
+		 */
 		int* getAttr();
 		
+		/**
+		 * @brief Get the dice or dices available in the store
+		 * @return Return a vector of dices if has a dice or dices stored. Otherwise, it will return nullptr.
+		 */
 		std::vector<Dice>* getDiceObj();
 		
+		/**
+		 * @brief Get the type of component that is holding
+		 */
 		DiceMathType getType();
 };
 
