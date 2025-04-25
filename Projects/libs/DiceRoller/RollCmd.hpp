@@ -51,7 +51,7 @@ class DICE_ROLLER_LIB_API RollCmd
 {
 	private:
 
-		std::vector<DiceMathCmd> mathCmds;
+		std::vector<DiceMathBase> mathCmds;
 
 	public:
 
@@ -71,7 +71,7 @@ class DICE_ROLLER_LIB_API RollCmd
 
 		std::vector<std::string> getCmdComponentsStr();
 
-		std::vector<DiceMathCmd> getCmdComponents();
+		std::vector<DiceMathBase> getCmdComponents();
 
 		int getCmdFinalVal();
 };
