@@ -126,6 +126,33 @@ class DiceMathAttr : public DiceMathBase
 };
 
 /**
+ * @brief Dice Mathematical Group to support groups that must be treated first before interacts with other Dice Mathematical components
+ */
+class DiceMathGroup : public DiceMathBase
+{
+	protected:
+
+	std::vector<DiceMathBase> cmds;
+
+	public:
+
+		DiceMathGroup();
+
+		DiceMathGroup (std::vector<DiceMathBase> cmds);
+
+		~DiceMathGroup();
+
+		DiceMathGroup& operator= (const DiceMathGroup& other);
+		DiceMathGroup& operator= (DiceMathGroup&& other) noexcept;
+
+		size_t getSize();
+
+		int getValue();
+
+		DiceMathType getType();
+};
+
+/**
  * @brief Dice Mathematical Operator to create the relations between DiceMathAttr or DiceMathDiceObj. The relation is with last operator's value stored applied the mathematical operation between the current operator data stored.
  */
 class DiceMathOp : public DiceMathBase

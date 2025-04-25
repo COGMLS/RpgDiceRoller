@@ -198,6 +198,67 @@ DiceMathType DiceMathAttr::getType()
 }
 
 //
+// DiceMathGroup:
+//
+
+DiceMathGroup::DiceMathGroup()
+{
+	this->type = DiceMathType::MATH_GROUP;
+}
+
+DiceMathGroup::DiceMathGroup(std::vector<DiceMathBase> cmds)
+{
+	this->type = DiceMathType::MATH_GROUP;
+	this->cmds = cmds;
+}
+
+DiceMathGroup::~DiceMathGroup()
+{
+
+}
+
+DiceMathGroup& DiceMathGroup::operator=(const DiceMathGroup& other)
+{
+	this->type = other.type;
+	this->cmds = other.cmds;
+	this->data = other.data;
+	return *this;
+}
+
+DiceMathGroup& DiceMathGroup::operator=(DiceMathGroup&& other) noexcept
+{
+	if (this == &other)
+	{
+		return *this;
+	}
+
+	this->type = other.type;
+	this->cmds = other.cmds;
+	this->data = other.data;
+	return *this;
+}
+
+int DiceMathGroup::getValue()
+{
+	if (this->getSize() == 1)
+	{
+		return this->cmds[0].getValue();
+	}
+	
+	return 0;
+}
+
+DiceMathType DiceMathGroup::getType()
+{
+	return this->type;
+}
+
+size_t DiceMathGroup::getSize()
+{
+	return this->cmds.size();
+}
+
+//
 // DiceMathOp:
 //
 
