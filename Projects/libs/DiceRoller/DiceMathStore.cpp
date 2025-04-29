@@ -172,6 +172,32 @@ DiceMathStore &DiceMathStore::operator=(DiceMathStore &&other) noexcept
 	return *this;
 }
 
+DiceMathStore &DiceMathStore::operator=(int attr)
+{
+	this->clear();
+	this->attr.reset(new int);
+	*this->attr = attr;
+	this->type = DiceMathType::NUMBER_TYPE;
+	return *this;
+}
+
+DiceMathStore &DiceMathStore::operator=(Dice dice)
+{
+    this->clear();
+	this->dices.reset(new std::vector<Dice>);
+	this->dices->push_back(dice);
+	this->type = DiceMathType::DICE_MATH;
+	return *this;
+}
+
+DiceMathStore &DiceMathStore::operator=(std::vector<Dice> dices)
+{
+    this->clear();
+	this->dices.reset(new std::vector<Dice>(dices));
+	this->type = DiceMathType::DICE_MATH;
+	return *this;
+}
+
 void DiceMathStore::clear()
 {
 	if (this->attr)

@@ -88,6 +88,10 @@ class DiceMathStore
 		
 		DiceMathStore& operator= (const DiceMathStore& other);
 		DiceMathStore& operator= (DiceMathStore&& other) noexcept;
+
+		DiceMathStore& operator= (int attr);
+		DiceMathStore& operator= (Dice dice);
+		DiceMathStore& operator= (std::vector<Dice> dices);
 		
 		/**
 		 * @brief Clear the DiceMathStore
