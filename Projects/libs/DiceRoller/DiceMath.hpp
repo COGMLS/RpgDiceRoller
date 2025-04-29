@@ -206,18 +206,39 @@ class DiceMathGroup : public DiceMathBase
 {
 	protected:
 
+	unsigned char groupLvl;
 	std::vector<DiceMathBase> cmds;
 
 	public:
+
+		//
+		// Constructors:
+		//
 
 		DiceMathGroup();
 
 		DiceMathGroup (std::vector<DiceMathBase> cmds);
 
+		DiceMathGroup (const DiceMathGroup& other);
+
+		DiceMathGroup (DiceMathGroup&& other) noexcept;
+
+		//
+		// Destructor:
+		//
+
 		~DiceMathGroup();
+
+		//
+		// Operators:
+		//
 
 		DiceMathGroup& operator= (const DiceMathGroup& other);
 		DiceMathGroup& operator= (DiceMathGroup&& other) noexcept;
+
+		//
+		// Methods:
+		//
 
 		size_t getSize();
 

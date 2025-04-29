@@ -208,13 +208,31 @@ int DiceMathAttr::getValue()
 
 DiceMathGroup::DiceMathGroup()
 {
+	this->groupLvl = 0;
 	this->type = DiceMathType::MATH_GROUP;
 }
 
 DiceMathGroup::DiceMathGroup(std::vector<DiceMathBase> cmds)
 {
+	this->groupLvl = 0;
 	this->type = DiceMathType::MATH_GROUP;
 	this->cmds = cmds;
+}
+
+DiceMathGroup::DiceMathGroup(const DiceMathGroup &other)
+{
+	this->type = other.type;
+	this->data = other.data;
+	this->cmds = other.cmds;
+	this->groupLvl = other.groupLvl;
+}
+
+DiceMathGroup::DiceMathGroup(DiceMathGroup &&other) noexcept
+{
+	this->type = std::move(other.type);
+	this->data = std::move(other.data);
+	this->cmds = std::move(other.cmds);
+	this->groupLvl = std::move(other.groupLvl);
 }
 
 DiceMathGroup::~DiceMathGroup()
@@ -227,6 +245,7 @@ DiceMathGroup& DiceMathGroup::operator=(const DiceMathGroup& other)
 	this->type = other.type;
 	this->cmds = other.cmds;
 	this->data = other.data;
+	this->groupLvl = other.groupLvl;
 	return *this;
 }
 
@@ -237,9 +256,10 @@ DiceMathGroup& DiceMathGroup::operator=(DiceMathGroup&& other) noexcept
 		return *this;
 	}
 
-	this->type = other.type;
-	this->cmds = other.cmds;
-	this->data = other.data;
+	this->type = std::move(other.type);
+	this->cmds = std::move(other.cmds);
+	this->data = std::move(other.data);
+	this->groupLvl = std::move(other.groupLvl);
 	return *this;
 }
 
@@ -249,6 +269,14 @@ int DiceMathGroup::getValue()
 	{
 		return this->cmds[0].getValue();
 	}
+	
+	/** @todo: Implement group calculation
+	 * -------------------------------------
+	 * Group calculation must be executed by
+	 * the same function that calculates the
+	 * other interactions
+	 * 
+	*/
 	
 	return 0;
 }
