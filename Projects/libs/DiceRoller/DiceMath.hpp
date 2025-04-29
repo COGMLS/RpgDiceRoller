@@ -144,8 +144,6 @@ class DiceMathDiceObj : public DiceMathBase
 		DiceMathDiceObj& operator= (DiceMathDiceObj&& other) noexcept;
 		
 		int getValue();
-
-		DiceMathType getType();
 };
 
 /**
@@ -167,8 +165,6 @@ class DiceMathAttr : public DiceMathBase
 		DiceMathAttr& operator= (DiceMathAttr&& other) noexcept;
 
 		int getValue();
-
-		DiceMathType getType();
 };
 
 /**
@@ -194,8 +190,6 @@ class DiceMathGroup : public DiceMathBase
 		size_t getSize();
 
 		int getValue();
-
-		DiceMathType getType();
 };
 
 /**

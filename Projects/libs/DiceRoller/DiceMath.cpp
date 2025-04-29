@@ -147,11 +147,6 @@ int DiceMathDiceObj::getValue()
     return val;
 }
 
-DiceMathType DiceMathDiceObj::getType()
-{
-    return this->type;
-}
-
 //
 // DiceMathAttr:
 //
@@ -207,11 +202,6 @@ int DiceMathAttr::getValue()
 	return *this->data.getAttr();
 }
 
-DiceMathType DiceMathAttr::getType()
-{
-    return this->type;
-}
-
 //
 // DiceMathGroup:
 //
@@ -261,11 +251,6 @@ int DiceMathGroup::getValue()
 	}
 	
 	return 0;
-}
-
-DiceMathType DiceMathGroup::getType()
-{
-	return this->type;
 }
 
 size_t DiceMathGroup::getSize()
