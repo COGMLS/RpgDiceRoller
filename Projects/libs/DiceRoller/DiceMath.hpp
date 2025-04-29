@@ -273,8 +273,6 @@ class DiceMathOp : public DiceMathBase
 		bool hasMathCmd();
 		
 		char getOperator();
-
-		DiceMathType getType();
 };
 
 class DiceMath

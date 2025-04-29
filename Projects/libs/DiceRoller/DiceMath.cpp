@@ -355,11 +355,6 @@ char DiceMathOp::getOperator()
     return this->op;
 }
 
-DiceMathType DiceMathOp::getType()
-{
-    return DiceMathType::MATH_OPERATOR;
-}
-
 DiceMath::DiceMath()
 {
 	this->op.push_back(DiceMathOp('+', d20()));
