@@ -128,6 +128,10 @@ class DiceMathDiceObj : public DiceMathBase
 {
 	public:
 	
+		//
+		// Constructors:
+		//
+	
 		DiceMathDiceObj (Dice dice);
 		
 		DiceMathDiceObj (std::vector<Dice> dices);
@@ -138,10 +142,22 @@ class DiceMathDiceObj : public DiceMathBase
 		
 		DiceMathDiceObj (DiceMathDiceObj&& other) noexcept;
 		
+		//
+		// Destructor:
+		//
+		
 		~DiceMathDiceObj();
+
+		//
+		// Operators:
+		//
 
 		DiceMathDiceObj& operator= (const DiceMathDiceObj& other);
 		DiceMathDiceObj& operator= (DiceMathDiceObj&& other) noexcept;
+		
+		//
+		// Methods:
+		//
 		
 		int getValue();
 };
@@ -153,16 +169,32 @@ class DiceMathAttr : public DiceMathBase
 {
 	public:
 	
+		//
+		// Constructors:
+		//
+	
 		DiceMathAttr (int value);
 
 		DiceMathAttr (const DiceMathAttr& other);
 
 		DiceMathAttr (DiceMathAttr&& other) noexcept;
 
+		//
+		// Destructor:
+		//
+
 		~DiceMathAttr();
+
+		//
+		// Operators:
+		//
 
 		DiceMathAttr& operator= (const DiceMathAttr& other);
 		DiceMathAttr& operator= (DiceMathAttr&& other) noexcept;
+
+		//
+		// Methods:
+		//
 
 		int getValue();
 };
@@ -205,6 +237,10 @@ class DiceMathOp : public DiceMathBase
 	
 	public:
 
+		//
+		// Constructors:
+		//
+
 		DiceMathOp (char op);
 
 		DiceMathOp (char op, DiceMathAttr attr);
@@ -215,10 +251,22 @@ class DiceMathOp : public DiceMathBase
 
 		DiceMathOp (DiceMathOp&& other) noexcept;
 
+		//
+		// Destructor:
+		//
+
 		~DiceMathOp();
+
+		//
+		// Operators:
+		//
 
 		DiceMathOp& operator= (const DiceMathOp& other);
 		DiceMathOp& operator= (DiceMathOp&& other) noexcept;
+
+		//
+		// Methods:
+		//
 
 		int getValue();
 		
