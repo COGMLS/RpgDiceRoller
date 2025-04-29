@@ -55,24 +55,70 @@ class DiceMathBase
 {
 	protected:
 
-		DiceMathType type;
-		DiceMathStore data;
+		DiceMathType type;		// Type of mathematical operation
+		DiceMathStore data;		// Data store
 
 	public:
+
+		//
+		// Constructors:
+		//
 
 		DiceMathBase();
 
 		DiceMathBase (const DiceMathBase& other);
 		DiceMathBase (DiceMathBase&& other) noexcept;
 		
+		//
+		// Destructor:
+		//
+		
 		~DiceMathBase();
+
+		//
+		// Operators:
+		//
 
 		DiceMathBase& operator= (const DiceMathBase& other);
 		DiceMathBase& operator= (DiceMathBase&& other) noexcept;
 
+		bool operator== (DiceMathType type);
+
+		//
+		// Methods:
+		//
+
+		/**
+		 * @brief Test if the math component is NOT_DEFINED
+		 */
+		bool isNull();
+
+		/**
+		 * @brief Get the type of mathematical component
+		 */
+		DiceMathType getType();
+
+		//
+		// Virtual Methods:
+		//
+
+		/**
+		 * @brief Get the value from data store
+		 * @note Default value for DiceMathBase is 0
+		 */
 		virtual int getValue();
-		virtual DiceMathType getType();
+
+		/**
+		 * @brief Get the number of dices available in the data store
+		 * @note Default value for DiceMathBase is 0
+		 */
 		virtual size_t getSize();
+
+		/**
+		 * @brief Get the math operator
+		 * @return Default value for DiceMathBase is NULL ('\0') char
+		 */
+		virtual char getOperator();
 };
 
 /**

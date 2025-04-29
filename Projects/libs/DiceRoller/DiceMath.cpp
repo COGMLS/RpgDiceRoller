@@ -47,6 +47,11 @@ DiceMathBase &DiceMathBase::operator=(DiceMathBase &&other) noexcept
 	return *this;
 }
 
+bool DiceMathBase::operator==(DiceMathType type)
+{
+    return this->type == type;
+}
+
 int DiceMathBase::getValue()
 {
 	return 0;
@@ -54,12 +59,22 @@ int DiceMathBase::getValue()
 
 DiceMathType DiceMathBase::getType()
 {
-	return DiceMathType::NOT_DEFINED;
+	return this->type;
 }
 
 size_t DiceMathBase::getSize()
 {
     return 0;
+}
+
+char DiceMathBase::getOperator()
+{
+	return '\0';
+}
+
+bool DiceMathBase::isNull()
+{
+    return this->type == DiceMathType::NOT_DEFINED;
 }
 
 //
